@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/', function () {
+//     return view('login');
+// });
+use App\Http\Controllers\DepartmentController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('company');
 });
+
+Route::resource('department', DepartmentController::class);
+Route::resource('employee', \App\Http\Controllers\EmployeeController::class);
